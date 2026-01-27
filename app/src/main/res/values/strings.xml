@@ -1,0 +1,29 @@
+<resources>
+    <!--CREDENCIALES APLICATIVO-->
+    <string name="app_name">Inti_agenda</string>
+    <string name="version">Version 1.0.0</string>
+
+    <!--LOGIN-->
+    <string name="titulo_login">Ingrese sesión</string>
+    <string name="lbl_usuario">Usuario</string>
+    <string name="txt_usuario">Ingrese usuario</string>
+    <string name="lbl_password">Contraseña</string>
+    <string name="txt_password">Ingrese contraseña</string>
+    <string name="btn_ingresar">INICIAR SESIÓN</string>
+    <string name="lbl_crear_cuenta">No tienes cuenta? Registrate</string>
+    <string name="bienvenido">Empieza a organizar tu agenda</string>
+    <string name="btn_registro">REGISTRARSE</string>
+    <string name="olvidasteContraseña">Olvidaste la contraseña? Haz click aqui</string>
+
+    <!--REGISTRO-->
+    <string name="crear_cuenta">Crear una cuenta</string>
+    <string name="nombreEt">Nombre</string>
+    <string name="correoEt">Correo</string>
+    <string name="contraseñaEt">Contraseña</string>
+    <string name="confirmarContraseñaEt">Confirmar contraseña</string>
+    <string name="registrarUsuarioEt">Registrar</string>
+    <string name="tengoCuenta">Tengo una cuenta</string>
+
+    <!--ELECCION-->
+    <!--MAS DATOS-->
+</resources>
