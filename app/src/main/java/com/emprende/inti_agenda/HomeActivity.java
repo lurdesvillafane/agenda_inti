@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.widget.CalendarView;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.content.Intent;
 import android.widget.LinearLayout;
@@ -21,10 +22,10 @@ public class HomeActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
         CalendarView calendarView = findViewById(R.id.calendarView);
-        LinearLayout categoria1 = findViewById(R.id.categoria1);
-        LinearLayout categoria2 = findViewById(R.id.categoria2);
-        LinearLayout categoria3 = findViewById(R.id.categoria3);
-        LinearLayout categoria4 = findViewById(R.id.categoria4);
+        ImageView categoria1 = findViewById(R.id.categoria1);
+        ImageView categoria2 = findViewById(R.id.categoria2);
+        ImageView categoria3 = findViewById(R.id.categoria3);
+        ImageView categoria4 = findViewById(R.id.categoria4);
 
         categoria1.setOnClickListener(v -> abrirCategoria("Categoria 1"));
         categoria2.setOnClickListener(v -> abrirCategoria("Categoria 2"));
