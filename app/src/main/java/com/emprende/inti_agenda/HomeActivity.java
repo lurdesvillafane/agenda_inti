@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        CalendarView calendarView = findViewById(R.id.calendarView);
+        CalendarView calendarView = findViewById(R.id.CalendarView);
         ImageView categoria1 = findViewById(R.id.categoria1);
         ImageView categoria2 = findViewById(R.id.categoria2);
         ImageView categoria3 = findViewById(R.id.categoria3);
