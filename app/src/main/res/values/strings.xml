@@ -32,6 +32,7 @@
     <string name="categoria2">Categoria 2</string>
     <string name="categoria3">Categoria 3</string>
     <string name="categoria4">Categoria 4</string>
+    <string name="title_activity_pedidos">PedidosActivity</string>
 
     <!--ELECCION-->
     <!--MAS DATOS-->

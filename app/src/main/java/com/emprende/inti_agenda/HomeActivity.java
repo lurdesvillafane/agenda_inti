@@ -1,72 +1,69 @@
 package com.emprende.inti_agenda;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.kizitonwose.calendarview.CalendarView;
-import com.kizitonwose.calendarview.model.CalendarDay;
-import com.kizitonwose.calendarview.ui.DayBinder;
-import com.kizitonwose.calendarview.ui.ViewContainer;
-
-import java.time.DayOfWeek;
-import java.time.YearMonth;
+import android.content.Intent;
+import android.widget.LinearLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private CalendarView calendarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
 
-        calendarView = findViewById(R.id.calendarMini);
+        TextView pedidosBtn = findViewById(R.id.textView8);
 
-        configurarCalendario();
-    }
+        pedidosBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, PedidosActivity.class);
+            startActivity(intent);
+        });
 
-    private void configurarCalendario() {
+        CalendarView calendarView = findViewById(R.id.calendarView);
+        ImageView categoria1 = findViewById(R.id.categoria1);
+        ImageView categoria2 = findViewById(R.id.categoria2);
+        ImageView categoria3 = findViewById(R.id.categoria3);
+        ImageView categoria4 = findViewById(R.id.categoria4);
 
-        calendarView.setDayBinder(new DayBinder<DayViewContainer>() {
+        categoria1.setOnClickListener(v -> abrirCategoria("Categoria 1"));
+        categoria2.setOnClickListener(v -> abrirCategoria("Categoria 2"));
+        categoria1.setOnClickListener(v -> abrirCategoria("Categoria 3"));
+        categoria2.setOnClickListener(v -> abrirCategoria("Categoria 4"));
 
-            @Override
-            public DayViewContainer create(View view) {
-                return new DayViewContainer(view);
-            }
+        calendarView.setDate(System.currentTimeMillis(), true, true);
+        calendarView.setMinDate(System.currentTimeMillis());
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
 
-            @Override
-            public void bind(DayViewContainer container, CalendarDay day) {
+            String fecha = dayOfMonth + "/" + (month + 1) + "/" + year;
 
-                container.textView.setText(
-                        String.valueOf(day.getDate().getDayOfMonth())
-                );
+            Toast.makeText(HomeActivity.this, "Fecha: " + fecha, Toast.LENGTH_SHORT).show();
 
-                container.view.setOnClickListener(v -> {
-
-                    Toast.makeText(
-                            HomeActivity.this,
-                            "Fecha: " + day.getDate(),
-                            Toast.LENGTH_SHORT
-                    ).show();
-                });
-            }
+        });
+         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
     }
+    private void abrirCategoria(String categoria) {
 
-    public static class DayViewContainer extends ViewContainer {
+        Intent intent = new Intent(HomeActivity.this, CategoryActivity.class);
+        intent.putExtra("categoria", categoria);
+        startActivity(intent);
 
-        TextView textView;
-        View view;
-
-        public DayViewContainer(View view) {
-            super(view);
-            this.view = view;
-            textView = view.findViewById(android.R.id.text1);
-        }
     }
+
 }
