@@ -130,15 +130,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <CalendarView
-                    android:id="@+id/calendarView"
+                <com.kizitonwose.calendarview.CalendarView
+                    android:id="@+id/calendarMini"
                     android:layout_width="431dp"
                     android:layout_height="374dp"
                     android:layout_marginTop="544dp"
-                    android:unfocusedMonthDateColor="#F8F8F8"
+                    android:contentDescription="Calendario de pedidos"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
                     android:id="@+id/textView5"
@@ -216,3 +216,4 @@
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
