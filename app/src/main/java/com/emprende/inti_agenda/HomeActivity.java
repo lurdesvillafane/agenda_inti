@@ -33,32 +33,27 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // 1. Vincular componentes
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navView);
         calendarView = findViewById(R.id.calendarMini);
         toolbar = findViewById(R.id.toolbar);
 
-        // 2. Configurar Toolbar
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
-        // --- FUNCIONALIDAD BOTÓN TUS PEDIDOS (textView8) ---
         TextView tvPedidos = findViewById(R.id.textView8);
         if (tvPedidos != null) {
             tvPedidos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Navega a activity_pedidos
                     Intent intent = new Intent(HomeActivity.this, PedidosActivity.class);
                     startActivity(intent);
                 }
             });
         }
 
-        // 3. BUSCAR IMAGEVIEW7 (Menú lateral)
         ImageView btnMenu = findViewById(R.id.imageView7);
         if (btnMenu != null) {
             btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +64,6 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
-        // 4. Clics de los items del menú lateral
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
