@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio"/>
+
+        <item android:title="Tus Pedidos"
+            android:id="@+id/nav_pedidos"
+            android:icon="@drawable/ic_arrow">
+
+            <menu>
+
+                <group>
+                    <item
+                        android:id="@+id/nav_cat1"
+                        android:icon="@drawable/ic_one"
+                        android:title="Categoria 1"/>
+
+                    <item
+                        android:id="@+id/nav_cat2"
+                        android:icon="@drawable/ic_two"
+                        android:title="Categoria 2"/>
+
+                    <item
+                        android:id="@+id/nav_cat3"
+                        android:icon="@drawable/ic_three"
+                        android:title="Categoria 3"/>
+
+                    <item
+                        android:id="@+id/nav_cat4"
+                        android:icon="@drawable/ic_four"
+                        android:title="Categoria 4"/>
+                </group>
+
+            </menu>
+
+        </item>
+
+
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_calendario"
+            android:title="Calendario"/>
+
+        <item
+            android:id="@+id/nav_papelera"
+            android:icon="@drawable/ic_papelera"
+            android:title="Papelera"/>
+
+    </group>
+</menu>

@@ -1,228 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".PedidosActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/usuario_inicio"
-                    android:textColor="@color/hint_color"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView8"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.378" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="TUS PEDIDOS"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="30sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="116dp" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="1000dp">
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="52dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="28dp"
-                    android:src="@drawable/icono_menu"
-                    app:layout_constraintEnd_toStartOf="@+id/textView7"
-                    app:layout_constraintHorizontal_bias="0.197"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="68dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="TUS PEDIDOS"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="30sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="68dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="28dp"
-                    android:src="@drawable/foto_perfil"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.75"
-                    app:layout_constraintStart_toEndOf="@+id/textView7"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/categoria1"
+                            android:layout_width="507dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="168dp"
+                            android:src="@drawable/pedidos_categoria1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/categoria1"
-                    android:layout_width="507dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="168dp"
-                    android:src="@drawable/pedidos_categoria1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.887"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/categoria2"
+                            android:layout_width="507dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="280dp"
+                            android:src="@drawable/pedidos_categoria2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/categoria2"
-                    android:layout_width="507dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="280dp"
-                    android:src="@drawable/pedidos_categoria2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.877"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/categoria3"
+                            android:layout_width="507dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="392dp"
+                            android:src="@drawable/pedidos_categoria3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/categoria3"
-                    android:layout_width="507dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="392dp"
-                    android:src="@drawable/pedidos_categoria3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.877"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/categoria4"
+                            android:layout_width="507dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="508dp"
+                            android:src="@drawable/pedidos_categoria4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/categoria4"
-                    android:layout_width="507dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="508dp"
-                    android:src="@drawable/pedidos_categoria4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.867"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/categoria5"
+                            android:layout_width="507dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="596dp"
+                            android:src="@drawable/pedidos_categoria5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/categoria5"
-                    android:layout_width="507dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="596dp"
-                    android:src="@drawable/pedidos_categoria5"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.857"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/categoria1"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/categoria1"
+                            app:layout_constraintEnd_toEndOf="@+id/categoria1"
+                            app:layout_constraintHorizontal_bias="0.238"
+                            app:layout_constraintStart_toStartOf="@+id/categoria1"
+                            app:layout_constraintTop_toTopOf="@+id/categoria1"
+                            app:layout_constraintVertical_bias="0.3" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="36dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/categoria1"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/categoria1"
-                    app:layout_constraintEnd_toEndOf="@+id/categoria1"
-                    app:layout_constraintHorizontal_bias="0.238"
-                    app:layout_constraintStart_toStartOf="@+id/categoria1"
-                    app:layout_constraintTop_toTopOf="@+id/categoria1"
-                    app:layout_constraintVertical_bias="0.3" />
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/categoria2"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/categoria2"
+                            app:layout_constraintEnd_toEndOf="@+id/categoria2"
+                            app:layout_constraintHorizontal_bias="0.238"
+                            app:layout_constraintStart_toStartOf="@+id/categoria2"
+                            app:layout_constraintTop_toTopOf="@+id/categoria2"
+                            app:layout_constraintVertical_bias="0.25" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="36dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/categoria1"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/categoria1"
-                    app:layout_constraintEnd_toEndOf="@+id/categoria1"
-                    app:layout_constraintHorizontal_bias="0.238"
-                    app:layout_constraintStart_toStartOf="@+id/categoria1"
-                    app:layout_constraintTop_toTopOf="@+id/categoria1"
-                    app:layout_constraintVertical_bias="0.3" />
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/categoria3"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/categoria3"
+                            app:layout_constraintEnd_toEndOf="@+id/categoria3"
+                            app:layout_constraintHorizontal_bias="0.238"
+                            app:layout_constraintStart_toStartOf="@+id/categoria3"
+                            app:layout_constraintTop_toTopOf="@+id/categoria3"
+                            app:layout_constraintVertical_bias="0.244" />
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/categoria2"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/categoria2"
-                    app:layout_constraintEnd_toEndOf="@+id/categoria2"
-                    app:layout_constraintHorizontal_bias="0.238"
-                    app:layout_constraintStart_toStartOf="@+id/categoria2"
-                    app:layout_constraintTop_toTopOf="@+id/categoria2"
-                    app:layout_constraintVertical_bias="0.25" />
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/categoria4"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/categoria4"
+                            app:layout_constraintEnd_toEndOf="@+id/categoria4"
+                            app:layout_constraintHorizontal_bias="0.236"
+                            app:layout_constraintStart_toStartOf="@+id/categoria4"
+                            app:layout_constraintTop_toTopOf="@+id/categoria4"
+                            app:layout_constraintVertical_bias="0.255" />
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/categoria3"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/categoria3"
-                    app:layout_constraintEnd_toEndOf="@+id/categoria3"
-                    app:layout_constraintHorizontal_bias="0.238"
-                    app:layout_constraintStart_toStartOf="@+id/categoria3"
-                    app:layout_constraintTop_toTopOf="@+id/categoria3"
-                    app:layout_constraintVertical_bias="0.244" />
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/categoria4"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/categoria5"
+                            app:layout_constraintEnd_toEndOf="@+id/categoria5"
+                            app:layout_constraintHorizontal_bias="0.236"
+                            app:layout_constraintStart_toStartOf="@+id/categoria5"
+                            app:layout_constraintTop_toTopOf="@+id/categoria5"
+                            app:layout_constraintVertical_bias="0.255" />
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/categoria4"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/categoria4"
-                    app:layout_constraintEnd_toEndOf="@+id/categoria4"
-                    app:layout_constraintHorizontal_bias="0.236"
-                    app:layout_constraintStart_toStartOf="@+id/categoria4"
-                    app:layout_constraintTop_toTopOf="@+id/categoria4"
-                    app:layout_constraintVertical_bias="0.255" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/categoria4"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/categoria5"
-                    app:layout_constraintEnd_toEndOf="@+id/categoria5"
-                    app:layout_constraintHorizontal_bias="0.236"
-                    app:layout_constraintStart_toStartOf="@+id/categoria5"
-                    app:layout_constraintTop_toTopOf="@+id/categoria5"
-                    app:layout_constraintVertical_bias="0.255" />
+                </LinearLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="184dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#67b0a1"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="@color/white"
+        app:itemTextAppearance="@style/drawerTextAppearance"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/nav_options" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

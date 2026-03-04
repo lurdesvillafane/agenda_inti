@@ -19,4 +19,9 @@
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="hintTextColor">@color/black</item>
     </style>
+    
+    <style name="drawerTextAppearance" parent="android:Widget.TextView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

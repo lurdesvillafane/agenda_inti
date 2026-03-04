@@ -36,4 +36,9 @@
 
     <!--ELECCION-->
     <!--MAS DATOS-->
+
+    <!--Menú-->
+    <string name="menu">MENÚ</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
 </resources>
