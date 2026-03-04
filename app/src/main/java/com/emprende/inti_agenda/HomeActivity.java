@@ -11,14 +11,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kizitonwose.calendarview.CalendarView;
-import com.kizitonwose.calendarview.model.CalendarDay;
-import com.kizitonwose.calendarview.ui.DayBinder;
-import com.kizitonwose.calendarview.ui.ViewContainer;
+import android.widget.CalendarView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -35,7 +35,6 @@ public class HomeActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navView);
-        calendarView = findViewById(R.id.calendarMini);
         toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -63,11 +62,36 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
         }
-        CalendarView calendarView = findViewById(R.id.CalendarView);
+
+        // --- SECCIÓN CALENDARIO ---
+        calendarView = findViewById(R.id.CalendarView);
         ImageView categoria1 = findViewById(R.id.categoria1);
         ImageView categoria2 = findViewById(R.id.categoria2);
         ImageView categoria3 = findViewById(R.id.categoria3);
         ImageView categoria4 = findViewById(R.id.categoria4);
+
+        categoria1.setOnClickListener(v -> abrirCategoria("Categoria 1"));
+        categoria2.setOnClickListener(v -> abrirCategoria("Categoria 2"));
+        categoria3.setOnClickListener(v -> abrirCategoria("Categoria 3"));
+        categoria4.setOnClickListener(v -> abrirCategoria("Categoria 4"));
+
+        calendarView.setDate(System.currentTimeMillis(), true, true);
+        calendarView.setMinDate(System.currentTimeMillis());
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+            String fecha = dayOfMonth + "/" + (month + 1) + "/" + year;
+            Toast.makeText(HomeActivity.this, "Fecha: " + fecha, Toast.LENGTH_SHORT).show();
+        });
+
+        // Manejo de Insets (opcional según tu layout XML)
+        View mainView = findViewById(R.id.drawerLayout); // Ajustado al ID principal
+        if (mainView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+        }
+        // --------------------------
 
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -77,36 +101,9 @@ public class HomeActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
-
-        configurarCalendario();
     }
-
-    private void configurarCalendario() {
-        calendarView.setDayBinder(new DayBinder<DayViewContainer>() {
-            @Override
-            public DayViewContainer create(View view) {
-                return new DayViewContainer(view);
-            }
-
-            @Override
-            public void bind(DayViewContainer container, CalendarDay day) {
-                container.textView.setText(String.valueOf(day.getDate().getDayOfMonth()));
-                container.view.setOnClickListener(v -> {
-                    Toast.makeText(HomeActivity.this, "Fecha: " + day.getDate(), Toast.LENGTH_SHORT).show();
-                });
-            }
-        });
-    }
-
-    public static class DayViewContainer extends ViewContainer {
-        TextView textView;
-        View view;
-
-        public DayViewContainer(View view) {
-            super(view);
-            this.view = view;
-            textView = view.findViewById(android.R.id.text1);
-        }
+    private void abrirCategoria(String nombre) {
+        Toast.makeText(this, "Abriendo: " + nombre, Toast.LENGTH_SHORT).show();
     }
 
     @Override
