@@ -63,6 +63,11 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
         }
+        CalendarView calendarView = findViewById(R.id.CalendarView);
+        ImageView categoria1 = findViewById(R.id.categoria1);
+        ImageView categoria2 = findViewById(R.id.categoria2);
+        ImageView categoria3 = findViewById(R.id.categoria3);
+        ImageView categoria4 = findViewById(R.id.categoria4);
 
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
