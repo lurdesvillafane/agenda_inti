@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,11 @@
         android:roundIcon="@mipmap/icono_inti_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Inti_agenda"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".VerPedidosActivity"
+            android:exported="false" />
         <activity
             android:name=".AddActivity"
             android:exported="false" />
@@ -30,12 +36,6 @@
             android:name=".EventEditActivity"
             android:exported="false" />
         <activity
-            android:name=".CalendarioSemanalActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegistroActivity"
-            android:exported="false" />
-        <activity
             android:name=".Registro"
             android:exported="false" />
         <activity
@@ -49,7 +49,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

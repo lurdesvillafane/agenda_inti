@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título del Pedido -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Título del pedido"
+        android:textColor="#212121"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Cliente -->
+    <TextView
+        android:id="@+id/tvCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Cliente: Nombre"
+        android:textColor="#424242"
+        android:textSize="14sp" />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Desc: Detalle del pedido"
+        android:textColor="#424242"
+        android:textSize="14sp" />
+
+    <!-- Pago -->
+    <TextView
+        android:id="@+id/tvPago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Pago: Estado"
+        android:textColor="#424242"
+        android:textSize="14sp" />
+
+    <!-- Fecha de Entrega -->
+    <TextView
+        android:id="@+id/tvFechaEntrega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Entrega: DD/MM/AAAA"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        android:textStyle="italic" />
+
+</LinearLayout>
